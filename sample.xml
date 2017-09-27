@@ -1,0 +1,27 @@
+<faq>
+  <section name="Stuff">
+
+     <question>What is this?</question>
+     <answer>This is a sample xml file</answer>
+    
+     <question>What info does it contain?</question>
+     <answer>The sample xml file contains the necessary information in order
+             for FAQtor to be able to create a FAQ
+     </answer>
+
+   </section>
+
+   <section name="More stuff">
+  
+     <question>What fields does FAQtor require in the xml file?</question>
+     <answer>The xml file consists of the faq container which is just a placeholder
+             for everything else.  The faq container consists of one-or-more sections.
+             Each of the sections has a name.  Each section consists of one-or-more
+             questions and answers.
+     </answer>
+
+     <question>Wow, this seems simple, is it?</question>
+     <answer>Yes!</answer>
+
+   </section>
+</faq>

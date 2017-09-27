@@ -1,0 +1,33 @@
+Welcome to FAQtor.
+
+To run FAQtor:
+
+faqtor.py yourinput.xml [yourconfig.cfg]
+
+for information regarding the XML and CFG file formats please refer to the documents:
+README.xml and README.cfg.  
+
+Additionally, you can view sample.xml and sample.cfg for examples of those files. 
+
+
+TO DO:
+======
+
+1. Currently, answers can not easily be linked to others or from other pages (without knowing the
+exact section # & question # (because FAQtor generates these).  I will address this in the next
+release by allowing an optional name argument to be associated with an answer.
+
+eg.
+
+<answer name="answer to silly question">This is a silly answer</answer>
+
+UPDATE: This task has been completed as of v0.6.
+
+
+
+2. Currently, the XML file cannot contain HTML markup (since it confuses the XML parser).  The
+author of the XML file needs to escape the markup which can be tedious.  I'm thinking of creating a
+preprocessor that does the escaping automatically so that the author can worry about more import
+things.
+
+UPDATE: This task has been completed in v0.7.
