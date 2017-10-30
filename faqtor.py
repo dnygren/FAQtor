@@ -1,7 +1,8 @@
 #!/bin/env python
 import sys, os, re
-from xml.sax import saxutils
-from xml.sax import make_parser, parseString
+import time
+from time import strftime
+from xml.sax import saxutils, handler, make_parser, parseString
 from xml.sax.handler import feature_namespaces
 try:
    from ConfigParser import RawConfigParser as ConfigParser
@@ -33,9 +34,7 @@ DEFAULTS = {
                                '<td valign="top">%(question)s</td></tr>'
     }
 
-               
-
-class InputReader(saxutils.DefaultHandler):
+class InputReader(handler.ContentHandler):
    def __init__(self):
       self.section_names = []
       #self.answer_names = {}  # maps "section#_answer#" to answer name
@@ -178,6 +177,7 @@ class FAQtor:
         fp.write('<a name="#top"></a>\n')
 
         self.output_page_start(fp)
+        fp.write("<center><h3>Last updated: %s </h3></center>\n\n" % strftime("%d %b %Y") )
         
         # display the questions within each section
         fp.write("%s\n" % self.opts['index_start'])

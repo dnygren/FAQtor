@@ -1,8 +1,10 @@
 Welcome to FAQtor.
 
-To run FAQtor:
+To manually run FAQtor:
 
 faqtor.py yourinput.xml [yourconfig.cfg]
+
+or use the GNUMakefile to automatically run faqtor and place the output in the parent directory.
 
 for information regarding the XML and CFG file formats please refer to the documents:
 README.xml and README.cfg.  
