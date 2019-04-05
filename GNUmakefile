@@ -31,8 +31,8 @@
 #
 # CALLING SEQUENCE      make  [target]
 #
-# EXAMPLES              make clean (Remove .html and distribution files)
-#                       make
+# EXAMPLES              make (Create FAQ.html in current and parent directories)
+#                       make clean (Remove .html and distribution files)
 #                       make dist  (Create .zip and .tar.gz distribution files)
 #
 # TARGET SYSTEM         Any
@@ -102,4 +102,3 @@ clean:
 	-/bin/rm -f FAQtor_$(FAQTOR_VERSION).zip
 	-/bin/rm -f FAQtor_$(FAQTOR_VERSION).tar.gz
 	-/bin/rm -f FAQ.html
-

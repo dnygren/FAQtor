@@ -54,19 +54,19 @@ Who developed FAQtor?
 Dan Nygren made a few additions to Phil's excellent work to allow pointing a
 reader to a particular section of the FAQ (e.g.
 http://www.example.com/FAQ.html#About ), set the date last updated
-automatically, and support for Python 2.7 .
+automatically, support for Python 2.7, and then Python 3.X .
 
 </p>
 
 </answer>
 
 <question>
-Why didn't you feed back this changes to the original FAQtor?
+Why didn't you feed back these changes to the original FAQtor?
 </question>
 
 <answer>
 
-I did make an attempt, but was unable to successfully do so.  Hosting my
+I did make an attempt, but was unable to successfully do so. Hosting my
 changes per the license on github seemed to be the right thing to do.
 
 </answer>
@@ -80,7 +80,7 @@ What do I need in order to use FAQtor?
 </question>
 <answer>
 
-Python 2.7 (or greater) is required.
+Python 3 and PyXML is required. FAQtor was tested with Python 3.5.3
 
 </answer>
 
