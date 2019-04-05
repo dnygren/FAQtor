@@ -1,8 +1,10 @@
 <faq>
 
-<!-- This FAQ.xml file was reconstructed from http://faqtor.sourceforge.net/faq.html -->
+<!--
+This FAQ.xml file was reconstructed from http://faqtor.sourceforge.net/faq.html
+-->
 
-<!-- 
+<!--
 Note that you can comment out portions of your FAQ.xml file by doing
 something like this.
 -->
@@ -64,8 +66,8 @@ Why didn't you feed back this changes to the original FAQtor?
 
 <answer>
 
-I did make an attempt, but was unable to successfully do so.  Hosting my changes
-per the license on github seemed to be the right thing to do.
+I did make an attempt, but was unable to successfully do so.  Hosting my
+changes per the license on github seemed to be the right thing to do.
 
 </answer>
 
@@ -113,9 +115,11 @@ What does the XML input file look like?
 The FAQtor FAQ was generated with this XML file.
 See <a href="./FAQ.xml">FAQ.xml</a> in the FAQtor source distribution.
 
-The XML input file can contain HTML so I often have preformatted text sections to show portions of screen dumps:
+The XML input file can contain HTML so I often have preformatted text sections
+to show portions of screen dumps:
 <pre>
-prompt> mycommand | grep ':CA' | sed 's/+//' | sed 's/;//' | sed 's/^[ \t]*//;s/[ \t]*$//' | sort | uniq 
+prompt> mycommand | grep ':CA' | sed 's/+//' | sed 's/;//' \
+        | sed 's/^[ \t]*//;s/[ \t]*$//' | sort | uniq
 FRU-Part-Number:CA01022-0680 05D  /371-2227-04
 FRU-Part-Number:CA01022-0690 10G  /371-2219-07
 FRU-Part-Number:CA06620-D023 A0   /371-2215-01
@@ -127,7 +131,7 @@ FRU-Part-Number:CA06620-D382 A0   /371-2239-01
 <hr />
 
 <strong>
-	
+
 Items that need to be strongly pointed out
 
 </strong>
@@ -144,9 +148,9 @@ Emphasized areas of text.
 
 ... or lists:
 <ul>
-	<li> Feature A </li>
-	<li> Feature B </li>
-	<li> Feature C </li>
+    <li> Feature A </li>
+    <li> Feature B </li>
+    <li> Feature C </li>
 </ul>
 
 <hr />
@@ -201,7 +205,8 @@ What is the structure of the XML input file in?
 </question>
 <answer>
 
-Please refer to the <a href="./README.xml">README.xml</a> in the FAQtor source distribution
+Please refer to the <a href="./README.xml">README.xml</a> in the FAQtor source
+distribution
 
 </answer>
 
@@ -252,7 +257,7 @@ What format is the configuration file in?
 
 The config file uses a standard Windows INI file format.  For more information
 on the config file, please refer to README.cfg in the FAQtor source
-distribution. 
+distribution.
 
 </answer>
 

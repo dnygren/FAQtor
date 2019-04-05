@@ -3,8 +3,9 @@ XML file format:
 
 The XML input file is structured as follows:
 
-1. An opening and closing <faq> and </faq> tag contains all of the faq data. 
-2. The faq contains one or more "sections" each with a required "name" parameter.  
+1. An opening and closing <faq> and </faq> tag contains all of the faq data.
+2. The faq contains one or more "sections" each with a required "name"
+parameter.
 3. Each section contains one or more questions.
 4. Each of the questions contains exactly one answer.
 
@@ -38,20 +39,20 @@ refer to this answer from other documents or from within the faq:
 
 <answer name="any_valid_anchor_name">
 
-This expanded syntax is optional and was added to accommodate linking to answers from 
-elsewhere.  For example:
+This expanded syntax is optional and was added to accommodate linking to
+answers from elsewhere.  For example:
 
 <question>How do I use this new feature?</question>
 <answer name="new_feature">
 By adding a name="" attribute to the answer tag
 </answer>
 
-After running FAQtor incorporating the above into your XML input file you can create links
-within to this answer from another page, say "related.html":
+After running FAQtor incorporating the above into your XML input file you can
+create links within to this answer from another page, say "related.html":
 
 <h1>New features</h1>
 
-You can now refer to the FAQ from another page.  
+You can now refer to the FAQ from another page.
 Click <a href="faq.html#new_feature">here</a> to see how.
 
 
@@ -65,12 +66,12 @@ Putting it all together:
     <answer>This is the xml input file format</answer>
 
     <question>Is it really this easy?</question>
-    <answer>Yes, the xml file is structured in a very easy to create manner</answer>
+    <answer>Yes, the xml file is structured in a easy to create manner</answer>
   </section>
   <section name="More info">
     <question>Is there anything else I need to know?</question>
-    <answer>Yes.  
-            There are some "gotchas" that will be discussed later in this document
+    <answer>Yes.
+            There are some "gotchas" that will be discussed later.
     </answer>
   </section>
 </faq>
@@ -78,26 +79,28 @@ Putting it all together:
 Additional notes:
 =================
 
-Leading and trailing whitespace is ignored by FAQtor.  So each section, question and answer that 
-requires leading and/or trailing whitespace will need to include the HTML non-breaking space entity, 
-namely:  &nbsp;
+Leading and trailing whitespace is ignored by FAQtor.  So each section,
+question and answer that requires leading and/or trailing whitespace will need
+to include the HTML non-breaking space entity, namely:  &nbsp;
 
 eg.
 
 &nbsp;&nbsp;This line has two leading spaces.
 
-As of FAQtor v0.7 you can now include html markup directly within the XML document.  
-Although not syntactically correct XML, FAQtor will convert the HTML specific markup (namely 
-the < and > brackets) to XML-compliant entities (namely, &lt; and &gt;).  This functionality 
-is provided as a convenience to users because it can be quite tedious to manually replace 
-the start and end tag delimiters with entities.
+As of FAQtor v0.7 you can now include html markup directly within the XML
+document.  Although not syntactically correct XML, FAQtor will convert the HTML
+specific markup (namely the < and > brackets) to XML-compliant entities
+(namely, &lt; and &gt;).  This functionality is provided as a convenience to
+users because it can be quite tedious to manually replace the start and end tag
+delimiters with entities.
 
 eg.
 
-<answer>This answer requires a <br> linebreak</answer> 
+<answer>This answer requires a <br> linebreak</answer>
 
-The content of the previous <answer> XML tag will be converted by FAQtor to this:
+The content of the previous <answer> XML tag will be converted by FAQtor to
+this:
 
-<answer>This answer requires a &lt;br&gt; linebreak</answer> 
+<answer>This answer requires a &lt;br&gt; linebreak</answer>
 
 The previous result will then be passed the XML parser.

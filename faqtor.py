@@ -1,13 +1,14 @@
-#!/bin/env python
+#!/usr/bin/env python3
+# Converted to python3 using the 2to3 python translation script
 import sys, os, re
 import time
 from time import strftime
 from xml.sax import saxutils, handler, make_parser, parseString
 from xml.sax.handler import feature_namespaces
 try:
-   from ConfigParser import RawConfigParser as ConfigParser
+   from configparser import RawConfigParser as ConfigParser
 except:
-   print "FAQtor requires python >= 2.3"
+   print("FAQtor requires python >= 3.5.3")
    sys.exit(1)
 
 
@@ -29,7 +30,8 @@ DEFAULTS = {
     'output_filename': 'faq.html',
     'index_start': '<table border="0">',
     'index_end': '</table>',
-    'index_section': '<tr><th colspan="2" align="left">&nbsp;<br>%(section)s</th></tr>',
+    'index_section':
+        '<tr><th colspan="2" align="left">&nbsp;<br>%(section)s</th></tr>',
     'index_question': '<tr><td>Q.&nbsp;%(sindex)s.%(qindex)s&nbsp;</td>' +
                                '<td valign="top">%(question)s</td></tr>'
     }
@@ -45,7 +47,7 @@ class InputReader(handler.ContentHandler):
       self.question = ""
       self.answer = ""
       self.answer_name = None
-      
+
    def getNumSections(self):
       return len(self.section_names)
 
@@ -56,7 +58,7 @@ class InputReader(handler.ContentHandler):
       return self.section_names[sectionNum]
 
    def getSectionQandA(self, sectionName):
-      if not self.sections.has_key(sectionName):
+      if sectionName not in self.sections:
          return None
 
       return self.sections[sectionName]
@@ -65,7 +67,7 @@ class InputReader(handler.ContentHandler):
       self.start = 0
       return self
 
-   def next(self):
+   def __next__(self):
       section = self.getSectionName(self.start)
       if section == None:
          raise StopIteration
@@ -73,20 +75,21 @@ class InputReader(handler.ContentHandler):
       self.start += 1
       return self.start, section, q, a, aname
 
-    
-   def getData(self):
-      print self.section_names
-      print
-      print self.sections
 
-        
+   def getData(self):
+      print(self.section_names)
+      print()
+      print(self.sections)
+
+
    def startElement(self, name, attrs):
       name = name.lower()
       self.key = name
       if name == 'section':
          self.section = attrs.get('name')
          self.section_names.append(self.section)
-         self.sections[self.section] = ([], [], []) # questions, answers, answer_names
+         # questions, answers, answer_names
+         self.sections[self.section] = ([], [], [])
       elif name == 'question':
          self.question = ""
       elif name == 'answer':
@@ -105,11 +108,11 @@ class InputReader(handler.ContentHandler):
          self.sections[self.section][2].append(self.answer_name)
       self.data = ""
       self.answer_name = None
-          
+
    def characters(self, content):
       self.data += content
 
-        
+
 class FAQtor:
     def __init__(self, xmlfile, configfile):
         self.opts = {}
@@ -121,15 +124,15 @@ class FAQtor:
         if configfile:
             try:
                 fp = open(configfile, "r")
-            except Exception, e:
-                print "error reading config file:", configfile
-                print e
+            except Exception as e:
+                print("error reading config file:", configfile)
+                print(e)
                 sys.exit(1)
 
             config = ConfigParser()
             config.readfp(fp)
             fp.close()
-        
+
             for s in config.sections():
                for o in config.options(s):
                   val = config.get(s,o).strip()
@@ -137,7 +140,7 @@ class FAQtor:
                   self.opts["%s_%s" % (s, o)] = val
 
         # replace any missing config opts w/ defaults
-        for k,v in DEFAULTS.items():
+        for k,v in list(DEFAULTS.items()):
             self.opts.setdefault(k, v)
 
 
@@ -149,36 +152,38 @@ class FAQtor:
            after = data[m.end():]
            before = data[:m.end()-1]
            data = "%s&gt;%s" % (before, after)
-           
+
         return data
 
 
     def read_input(self, xmlfile):
         try:
             fp = open(xmlfile, "r")
-        except Exception, e:
-            print "error reading input file:", xmlfile
-            print e
+        except Exception as e:
+            print("error reading input file:", xmlfile)
+            print(e)
             sys.exit(1)
 
         data = self.replace_markup(fp.read())
         fp.close()
 
-	#print data
+        #print data
         # Create the handler
         ir = InputReader()
-        
+
         # Parse the xml string, data with xml reader, ir
         # print data
         parser = parseString(data, ir)
-        
+
         fp = open(self.opts['output_filename'], "w")
-        fp.write("<!-- This page was generated automatically with FAQtor.py -->\n\n")
+        fp.write("<!-- This page was generated automatically"
+                " with FAQtor.py -->\n\n")
         fp.write('<a name="#top"></a>\n')
 
         self.output_page_start(fp)
-        fp.write("<center><h3>Last updated: %s </h3></center>\n\n" % strftime("%d %b %Y") )
-        
+        fp.write("<center><h3>Last updated: %s </h3></center>\n\n"
+                 % strftime("%d %b %Y") )
+
         # display the questions within each section
         fp.write("%s\n" % self.opts['index_start'])
         for sectionnum, section, questions, answers, answer_names in ir:
@@ -216,9 +221,9 @@ class FAQtor:
                 for l in f:
                     fp.write("%s" % l)
                 f.close()
-            except Exception, e:
-                print "Could not read input file:", filename
-                print e
+            except Exception as e:
+                print("Could not read input file:", filename)
+                print(e)
                 sys.exit(0)
         else:
             fp.write("%s\n" % param)
@@ -245,13 +250,14 @@ class FAQtor:
             fp.write('%s\n' % self.opts['index_question'] % d)
             i += 1
 
-    def output_questions_and_answers(self, fp, snum, questions, answers, answer_names):
+    def output_questions_and_answers(self, fp, snum, questions, answers,
+                                     answer_names):
         l = len(questions)
         d = {'sindex': snum}
         d.update(self.opts)
         for i in range(l):
             #question = '<a name="%d_%d"></a>%s\n' % (snum, i, questions[i])
-            
+
             d['question'] = questions[i]
             d['answer'] = answers[i]
             d['aindex'] = i
@@ -259,7 +265,7 @@ class FAQtor:
 
             if (answer_names[i] != None):
                fp.write('<a name="%s"></a>\n' % answer_names[i])
-                        
+
             fp.write('<a name="%d_%d"></a>\n' % (snum, i))
             fp.write('%s\n' % self.opts['format_answer'] % d)
 
@@ -267,20 +273,16 @@ class FAQtor:
             fp.write('%s\n' % top)
             fp.write('%s\n' % self.opts['page_sep'])
 
-        
+
 
 if __name__ == '__main__':
     args = sys.argv
     if len(args) not in (2,3):
-        print "You must supply an input file and a config file"
-        print "Usage:   faqtor.py  inputfile  [configfile]"
+        print("You must supply an input file and a config file")
+        print("Usage:   faqtor.py  inputfile  [configfile]")
         sys.exit(1)
 
     inputfile = args[1]
     if len(args) == 3: configfile = args[2]
     else: configfile = None
     faqtor = FAQtor(inputfile, configfile)
-
-
-    
-        
