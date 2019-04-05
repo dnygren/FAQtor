@@ -4,7 +4,7 @@ To manually run FAQtor:
 
 faqtor.py yourinput.xml [yourconfig.cfg]
 
-Alternatively, use "make" with the GNUmakefile to run faqtor and place the
+Alternatively, use "make" with the GNUmakefile to run FAQtor and place the
 output html file in the current and parent directory. Read the GNUmakefile for
 more information.
 
