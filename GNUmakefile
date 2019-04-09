@@ -69,7 +69,7 @@ FAQTOR_VERSION := 8.3
 FMASK = u=rw,g=r,o=r
 
 FAQ.html : FAQ.xml FAQ.cfg
-	faqtor.py FAQ.xml FAQ.cfg
+	./faqtor.py FAQ.xml FAQ.cfg
 	-chmod $(FMASK) $@
 	cp -p $@ ..
 

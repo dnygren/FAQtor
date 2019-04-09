@@ -80,7 +80,7 @@ What do I need in order to use FAQtor?
 </question>
 <answer>
 
-Python 3 and PyXML is required. FAQtor was tested with Python 3.5.3
+Python 3 is required. FAQtor was tested with Python 3.5.3
 
 </answer>
 
