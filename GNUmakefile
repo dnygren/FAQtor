@@ -2,8 +2,7 @@
 # GNUmakefile   Automate building FAQs using faqtor.py
 #
 # by Daniel C. Nygren $Date: 2017/10/30 22:17:09 $
-# E-mail: dan.nygren@gmail.com
-# Permanent E-mail: dan.nygren@alumni.clemson.edu
+# Email: dan.nygren@gmail.com
 #
 # Copyright 2019 by Daniel C. Nygren
 #
