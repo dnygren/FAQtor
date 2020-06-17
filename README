@@ -1,12 +1,12 @@
-Welcome to FAQtor
+Welcome to FAQtor, a Frequently Asked Questions generaTOR.
 
 To manually run FAQtor:
 
 faqtor.py yourinput.xml [yourconfig.cfg]
 
-Alternatively, use "make" with the GNUmakefile to run FAQtor and place the
-output html file in the current and parent directory. Read the GNUmakefile for
-more information.
+Alternatively, use "make" with the provided GNUmakefile to run FAQtor and place
+the output html file in the current and parent directory. Read the GNUmakefile
+comment header block for more information.
 
 For information regarding the XML and cfg file formats please refer to the
 README.xml and README.cfg documents. You can also view sample.xml and
