@@ -108,6 +108,25 @@ cp -p FAQ.html ..
 </answer>
 
 <question>
+I ran FAQtor and got an error. What do I do?
+</question>
+<answer>
+
+Most errors are caused by a question, answer, or section tag not being matched
+by a corresponding closing tag.
+
+<p>
+
+Another common error is using an &amp; instead of <tt> &#38;38;</tt> for an
+ampersand etc. Consult a list of HTML character codes to make sure you are not
+using a character that must be encoded.
+
+</p>
+
+</answer>
+
+
+<question>
 What does the XML input file look like?
 </question>
 <answer>
@@ -205,7 +224,7 @@ What is the structure of the XML input file in?
 </question>
 <answer>
 
-Please refer to the <a href="./README.xml">README.xml</a> in the FAQtor source
+Please refer to the <a href="./README_xml">README_xml</a> in the FAQtor source
 distribution
 
 </answer>

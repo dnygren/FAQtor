@@ -7,7 +7,7 @@
 <center><h1>Your Project Name Frequently Asked Questions</h1></center>
 <center><h3>Maintained by <A HREF="mailto:dan.nygren@gmail.com">
 dan.nygren@gmail.com</A></h3></center>
-<center><h3>Last updated: 14 Nov 2019 </h3></center>
+<center><h3>Last updated: 16 Jun 2020 </h3></center>
 
 <table border="0">
 <tr><th colspan="2" align="left">&nbsp;<br>About</th></tr>
@@ -27,11 +27,13 @@ dan.nygren@gmail.com</A></h3></center>
 </a></td></tr>
 <tr><td>Q.&nbsp;2.1&nbsp;</td><td valign="top"><a href="#2_1">How do I run FAQtor?
 </a></td></tr>
-<tr><td>Q.&nbsp;2.2&nbsp;</td><td valign="top"><a href="#2_2">What does the XML input file look like?
+<tr><td>Q.&nbsp;2.2&nbsp;</td><td valign="top"><a href="#2_2">I ran FAQtor and got an error. What do I do?
 </a></td></tr>
-<tr><td>Q.&nbsp;2.3&nbsp;</td><td valign="top"><a href="#2_3">What does the config file look like?
+<tr><td>Q.&nbsp;2.3&nbsp;</td><td valign="top"><a href="#2_3">What does the XML input file look like?
 </a></td></tr>
-<tr><td>Q.&nbsp;2.4&nbsp;</td><td valign="top"><a href="#2_4">Why would I want to use a config file if it's optional?
+<tr><td>Q.&nbsp;2.4&nbsp;</td><td valign="top"><a href="#2_4">What does the config file look like?
+</a></td></tr>
+<tr><td>Q.&nbsp;2.5&nbsp;</td><td valign="top"><a href="#2_5">Why would I want to use a config file if it's optional?
 </a></td></tr>
 <tr><th colspan="2" align="left">&nbsp;<br>XML input file</th></tr>
 <tr><td>Q.&nbsp;3.0&nbsp;</td><td valign="top"><a href="#3_0">What is the structure of the XML input file in?
@@ -121,7 +123,23 @@ cp -p FAQ.html ..
 <a href="#top"><p align="right">Return to top&nbsp;&nbsp;</p></a>
 <hr>
 <a name="2_2"></a>
-<h2>A. 2.2 &nbsp;&nbsp; What does the XML input file look like?
+<h2>A. 2.2 &nbsp;&nbsp; I ran FAQtor and got an error. What do I do?
+</h2><br>Most errors are caused by a question, answer, or section tag not being matched
+by a corresponding closing tag.
+
+<p>
+
+Another common error is using an & instead of <tt> &38;</tt> for an
+ampersand etc. Consult a list of HTML character codes to make sure you are not
+using a character that must be encoded.
+
+</p>
+
+
+<a href="#top"><p align="right">Return to top&nbsp;&nbsp;</p></a>
+<hr>
+<a name="2_3"></a>
+<h2>A. 2.3 &nbsp;&nbsp; What does the XML input file look like?
 </h2><br>The FAQtor FAQ was generated with this XML file.
 See <a href="./FAQ.xml">FAQ.xml</a> in the FAQtor source distribution.
 
@@ -187,8 +205,8 @@ reader knows where the information in the answer came from.
 
 <a href="#top"><p align="right">Return to top&nbsp;&nbsp;</p></a>
 <hr>
-<a name="2_3"></a>
-<h2>A. 2.3 &nbsp;&nbsp; What does the config file look like?
+<a name="2_4"></a>
+<h2>A. 2.4 &nbsp;&nbsp; What does the config file look like?
 </h2><br>The FAQtor FAQ s also generated using the config file in the FAQtor source
 distribution. This file is optional.  If not supplied, defaults are provided.
 See the <a href="./FAQ.cfg">FAQ.cfg</a> file in the FAQtor source distribution.
@@ -196,8 +214,8 @@ See the <a href="./FAQ.cfg">FAQ.cfg</a> file in the FAQtor source distribution.
 
 <a href="#top"><p align="right">Return to top&nbsp;&nbsp;</p></a>
 <hr>
-<a name="2_4"></a>
-<h2>A. 2.4 &nbsp;&nbsp; Why would I want to use a config file if it's optional?
+<a name="2_5"></a>
+<h2>A. 2.5 &nbsp;&nbsp; Why would I want to use a config file if it's optional?
 </h2><br>Although FAQtor will use defaults, it is recommended that you create a config
 file to customize the layout of the FAQ.
 
@@ -207,7 +225,7 @@ file to customize the layout of the FAQ.
 <h1 id="XML input file">XML input file</h1>
 <a name="3_0"></a>
 <h2>A. 3.0 &nbsp;&nbsp; What is the structure of the XML input file in?
-</h2><br>Please refer to the <a href="./README.xml">README.xml</a> in the FAQtor source
+</h2><br>Please refer to the <a href="./README_xml">README_xml</a> in the FAQtor source
 distribution
 
 
