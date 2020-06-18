@@ -117,7 +117,7 @@ by a corresponding closing tag.
 
 <p>
 
-Another common error is using an &amp; instead of <tt> &#38;38;</tt> for an
+Another common error is using an &amp; instead of <tt> &#38;amp;amp;</tt> for an
 ampersand etc. Consult a list of HTML character codes to make sure you are not
 using a character that must be encoded.
 
