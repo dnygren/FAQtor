@@ -130,7 +130,10 @@ class FAQtor:
                 sys.exit(1)
 
             config = ConfigParser()
-            config.readfp(fp)
+            # DeprecationWarning: This method will be removed in
+            # future versions. Use 'parser.read_file()' instead.
+            #config.readfp(fp)
+            config.read_file(fp)
             fp.close()
 
             for s in config.sections():

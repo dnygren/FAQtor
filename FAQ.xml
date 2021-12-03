@@ -5,8 +5,8 @@ This FAQ.xml file was reconstructed from http://faqtor.sourceforge.net/faq.html
 -->
 
 <!--
-Note that you can comment out portions of your FAQ.xml file by doing
-something like this.
+Note that you can comment out portions of your FAQ.xml file by bracketing the
+sections you want to comment out like this.
 -->
 
 <section name="About">
